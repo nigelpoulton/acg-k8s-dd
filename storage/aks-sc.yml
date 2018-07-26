@@ -1,0 +1,11 @@
+## Don't need to create slow on GKE as a cluster has type=pd-standard already preconfigured as default on the cluster
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: basic
+  annotations: {"storageclass.beta.kubernetes.io/is-default-class":"true"}
+provisioner: kubernetes.io/azure-disk
+parameters:
+  kind: Managed
+  storageaccounttype: Standard_LRS
+  

@@ -1,0 +1,9 @@
+## Don't need to create slow on GKE as a cluster has type=pd-standard already preconfigured as default on the cluster
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast
+provisioner: kubernetes.io/gce-pd
+parameters:
+  type: pd-ssd
+  

@@ -1,0 +1,12 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: task-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: azuredisk
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce

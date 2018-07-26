@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Pod | Deployment
+...
+  spec:
+  ...
+    volumes:
+    - name: mysql-persistent-storage
+      persistentVolumeClaim:
+        claimName: mysql-pv-claim
